@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>书籍页</title>
+    <link rel="stylesheet" href="final.css">
+</head>
+<body>
+    <div id="shadow"></div>
+    <div id="Father">
+        <div class="topnav">
+          <img id="logo" src="image/方寸logo.png" alt="方寸">
+          <a class="top-nev-a" href="首页.html">首页</a>
+          <a class="top-nev-a" href="榜单.html">榜单</a>
+          <a class="top-nev-a" href="标签.html">标签</a>
+          <div class="search-box">
+            <input type="search" class="search" placeholder="搜索">
+            <button class="se-logo" type="button"><img id="search-img" src="image/3.1-搜索.png" alt="search"></button>
+            <ul class="result-list">
+              <li><a id="res1" href="书籍页.html">AISHA</a></li>
+              <li><a id="res2" href="书籍页.html">蓝色时期</a></li>
+              <li><a id="res3" href="书籍页.html">再见绘梨</a></li>
+            </ul>
+            <a href="投稿.html"><button id="submit-button" type="button">投稿</button></a>
+            <a id="Sign-in" href="注册登录.html">注册&nbsp;|&nbsp登录</a>
+         </div>
+        </div>
+      </div>
+      <div id="Book-intro">
+        <img src="image/AISHA.jpg" alt="AISHA">
+        <div id="intro-txt">
+          <h2>AISHA</h2>
+          <p class="itxt2">法吉特</p>
+          <p class="itxt2">悬疑</p>
+          <p class="itxt2">更新至19话</p>
+          <p class="itxt2">每月10日、25日更新</p>
+          <p class="itxt2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Aenean euismod bibendum laoreet. Proin gravida dolor sit
+            amet lacus accumsan et viverra justo commodo. Proin sodales.
+          </p>
+          <button id="Continued" type="button">续看 第1话</button>
+        </div>
+      </div>
+      <div id="catalogue">
+        <h2>目录</h2>
+        <div id="cata-line">
+          <button class="cata-btn" type="button">序章 复仇的火焰</button>
+          <button class="cata-btn" type="button">第1话    艾莎和艾达</button>
+          <button class="cata-btn" type="button">第2话    狄默奇家族</button>
+          <button class="cata-btn" type="button">第3话    雨夜游戏</button>
+          <button class="cata-btn" type="button">第4话    爱与杀戮的童话</button>
+        </div>
+        <div id="cata-line">
+          <button class="cata-btn" type="button">第5话    新的家人</button>
+          <button class="cata-btn" type="button">第6话    西恩</button>
+          <button class="cata-btn" type="button">第7话    测试</button>
+          <button class="cata-btn" type="button">第8话    礼物</button>
+          <button class="cata-btn" type="button">第9话    恶作剧</button>
+        </div>
+        <div id="cata-line">
+          <button class="cata-btn" type="button">第10话    你是谁？</button>
+          <button class="cata-btn" type="button">第11话    童话的秘密</button>
+          <button class="cata-btn" type="button">第12话    少女心思</button>
+          <button class="cata-btn" type="button">第13话    小狗亚瑟</button>
+          <button class="cata-btn" type="button">第14话    偏爱</button>
+        </div>
+        <div id="cata-line">
+          <button class="cata-btn" type="button">第15话    对付西恩</button>
+          <button class="cata-btn" type="button">第16话    伤痕</button>
+          <button class="cata-btn" type="button">第17话    十倍奉还</button>
+          <button class="cata-btn" type="button">第18话    演戏</button>
+          <button class="cata-btn" type="button">第19话    “闭上双眼”</button>
+        </div>
+      </div>
+      <div id="bottom" style="margin-top: 20px;">版权所有&nbsp©&nbsp方寸&nbsp&nbspwww.fangcun.com&nbsp&nbspJICP备11111111号J公网安备 11111111111111号</div>  
+</body>
+<script>
+  //搜索
+  var input = document.querySelector('input')
+  var ul = document.querySelector('.result-list')
+  input.onfocus = function()
+  {
+     ul.style.display = 'block'
+    this.classList.add('search')
+    input.placeholder = ''
+  }
+  input.onblur = function()
+  {
+     ul.style.display = 'none'
+    this.classList.remove('search')
+    input.placeholder = "搜索"
+  }
+</script>
+</html>

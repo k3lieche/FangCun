@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="final.css">
+</head>
+<body>
+ <div id="reg-top">
+    <a href="首页.html"><img id="logo" src="image/方寸logo.png" alt="方寸"></a>
+    <div class="search-box2">
+        <input type="search" class="search" placeholder="搜索">
+        <button class="se-logo2" type="button" onclick="window.location='书籍页.html'"><img id="search-img" src="image/3.1-搜索.png" alt="search"></button>
+    </div>
+ </div>
+    <div id="syimgbox"><img  id="sy-middle" src="image/首页bg.jpg" alt="首页bg"></div>
+    <div class="form-div">
+        <div class="reg-content">
+            <h1>欢迎注册</h1>
+            <span>已有帐号？</span> <a href="#">登录</a>
+        </div>
+        <form id="reg-form" action="#" method="get">
+            <div class="reg-line">
+                <p>用户名</p>
+                <input name="username" type="text" id="username">
+                <br>
+                <span id="username_err" class="err_msg" style="display:none">用户名不合乎规则</span>
+            </div>
+            <div class="reg-line">
+                <p>密码</p>
+                <input name="password" type="password" id="password">
+                <br>
+                <span id="password_err" class="err_msg" style="display: none">密码格式有误</span>
+            </div>
+            <div class="reg-line">
+                <p>手机号</p>
+                <input name="tel" type="text" id="tel">
+                <br>
+                <span id="tel_err" class="err_msg" style="display: none">手机号格式有误</span>
+            </div>
+            <div class="buttons">
+                <input value="注册" type="submit" id="reg-btn">
+            </div>
+            <br>
+        </form>
+    </div>
+    <div id="bottom">版权所有&nbsp©&nbsp方寸&nbsp&nbspwww.fangcun.com&nbsp&nbspJICP备11111111号J公网安备 11111111111111号</div>  
+ 
+</div>
+</body>
+<script>
+    var  username = document.getElementById("username");
+    username.onblur =judgeUserName;
+        function judgeUserName(){
+            var usernameValue = username.value.trim();
+            var  flag = usernameValue.length>=6&&usernameValue.length<=12;
+            if (flag){
+                document.getElementById("username_err").style.display="none";
+            }else{
+                document.getElementById("username_err").style.display="";
+            }
+            return flag;
+        }
+
+        
+    var  password = document.getElementById("password");
+    password.onblur =judgePassword;
+        function judgePassword(){        
+            var passwordValue = password.value.trim();
+            var flag = passwordValue.length>=6&&passwordValue.length<=12;
+            if (flag){
+                document.getElementById("password_err").style.display="none";
+            }else{
+                document.getElementById("password_err").style.display="";
+            }
+            return flag;
+        }
+    
+        
+    var  tel = document.getElementById("tel");
+    tel.onblur =judgeTel;
+        function judgeTel(){
+            var telValue = tel.value.trim();
+            var flag = telValue.length ==11 ;
+            if (flag){
+                document.getElementById("tel_err").style.display="none";
+            }else{
+                document.getElementById("tel_err").style.display="";
+            }
+            return flag;
+        }
+
+        
+    var regForm = document.getElementById("reg-form");
+    regForm.onsubmit = function (){
+         var flag = judgeUserName()&&judgePassword()&&judgeTel();
+       if (flag){
+            alert("注册成功");
+            return true;
+        }else {
+           return false;
+        }
+    }
+</script>
+</html>

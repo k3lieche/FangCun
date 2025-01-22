@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页</title>
+  <link rel="stylesheet" href="final.css">
+</head>
+<body>
+  <div id="Father">
+    <div class="topnav">
+      <img id="logo" src="image/方寸logo.png" alt="方寸">
+      <a class="top-nev-a" href="首页.html">首页</a>
+      <a class="top-nev-a" href="榜单.html">榜单</a>
+      <a class="top-nev-a" href="标签.html">标签</a>
+      <div class="search-box">
+        <input type="search" class="search" placeholder="搜索">
+        <button class="se-logo" type="button" onclick="window.location='书籍页.html'"><img id="search-img" src="image/3.1-搜索.png" alt="search"></button>
+        <ul class="result-list">
+          <li><a id="res1" href="书籍页.html">AISHA</a></li>
+          <li><a id="res2" href="书籍页.html">蓝色时期</a></li>
+          <li><a id="res3" href="书籍页.html">再见绘梨</a></li>
+        </ul>
+        <a href="投稿.html"><button id="submit-button" type="button">投稿</button></a>
+        <a id="Sign-in" href="注册登录.html">注册&nbsp;|&nbsp登录</a>
+     </div>
+    </div>
+  </div>
+  <div id="syimgbox"><img  id="sy-middle" src="image/首页bg.jpg" alt="首页bg"></div>
+  <div id="Father">
+    <div id="recommend">
+      <div id="tj"><p class="title1">为你推荐</p></div>
+      <div id="rec-line1">
+        <a href="书籍页.html">
+          <div class="cartoon">
+            <img class="rec-img" src="image/AISHA.jpg" alt="AISHA">
+            <p class="ca-name">AISHA</p>
+            <p class="ca-type">悬疑</p>
+          </div>
+        </a>
+        <a href="书籍页.html">
+          <div class="cartoon">
+            <img class="rec-img" src="image/AISHA.jpg" alt="AISHA">
+            <p class="ca-name">AISHA</p>
+            <p class="ca-type">悬疑</p>
+          </div>
+        </a>
+        <a href="书籍页.html">
+          <div class="cartoon">
+            <img class="rec-img" src="image/AISHA.jpg" alt="AISHA">
+            <p class="ca-name">AISHA</p>
+            <p class="ca-type">悬疑</p>
+          </div>
+        </a>
+        <a href="书籍页.html">
+          <div class="cartoon">
+            <img class="rec-img" src="image/AISHA.jpg" alt="AISHA">
+            <p class="ca-name">AISHA</p>
+            <p class="ca-type">悬疑</p>
+          </div>
+        </a>
+        <a href="书籍页.html">
+          <div class="cartoon">
+            <img class="rec-img" src="image/AISHA.jpg" alt="AISHA">
+            <p class="ca-name">AISHA</p>
+            <p class="ca-type">悬疑</p>
+          </div>
+        </a>
+      </div>
+      <div id="rec-line2">
+        <a href="书籍页.html">
+          <div class="cartoon">
+            <img class="rec-img" src="image/AISHA.jpg" alt="AISHA">
+            <p class="ca-name">AISHA</p>
+            <p class="ca-type">悬疑</p>
+          </div>
+        </a>
+        <a href="书籍页.html">
+          <div class="cartoon">
+            <img class="rec-img" src="image/AISHA.jpg" alt="AISHA">
+            <p class="ca-name">AISHA</p>
+            <p class="ca-type">悬疑</p>
+          </div>
+        </a>
+        <a href="书籍页.html">
+          <div class="cartoon">
+            <img class="rec-img" src="image/AISHA.jpg" alt="AISHA">
+            <p class="ca-name">AISHA</p>
+            <p class="ca-type">悬疑</p>
+          </div>
+        </a>
+        <a href="书籍页.html">
+          <div class="cartoon">
+            <img class="rec-img" src="image/AISHA.jpg" alt="AISHA">
+            <p class="ca-name">AISHA</p>
+            <p class="ca-type">悬疑</p>
+          </div>
+        </a>
+        <a href="书籍页.html">
+          <div class="cartoon">
+            <img class="rec-img" src="image/AISHA.jpg" alt="AISHA">
+            <p class="ca-name">AISHA</p>
+            <p class="ca-type">悬疑</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div id="information">
+      <div class="title1">资讯速递</div>
+      <div class="wrap">
+        <ul class="list">
+            <li class="item active"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+        </ul>
+        <ul class="pointList">
+            <li class="point active" data-index = 0></li>
+            <li class="point" data-index = 1></li>
+            <li class="point" data-index = 2></li>
+            <li class="point" data-index = 3></li>
+        </ul>
+        <button class="btn" id="leftBtn"><img class="btn-img" src="image/上一页按钮.png" alt="上一页按钮"> </button> 
+        <button class="btn" id="rightBtn"><img class="btn-img" src="image/下一页按钮.png" alt=""> </button>
+      </div>
+    </div>
+  </div>
+  <div id="bottom">版权所有&nbsp©&nbsp方寸&nbsp&nbspwww.fangcun.com&nbsp&nbspJICP备11111111号J公网安备 11111111111111号</div>  
+</body>
+<script>
+  //搜索
+  var input = document.querySelector('input')
+  var ul = document.querySelector('.result-list')
+  input.onfocus = function()
+  {
+     ul.style.display = 'block'
+    this.classList.add('search')
+    input.placeholder = ''
+  }
+  input.onblur = function()
+  {
+     ul.style.display = 'none'
+    this.classList.remove('search')
+    input.placeholder = "搜索"
+  }
+
+  //轮播
+  var items = document.querySelectorAll(".item");
+        var points = document.querySelectorAll(".point")
+        var left = document.getElementById("leftBtn");
+        var right = document.getElementById("rightBtn");
+        var all = document.querySelector(".wrap")
+        var index = 0;
+        var time = 0;
+        
+ 
+        var clearActive = function () {
+            for (i = 0; i < items.length; i++) {
+                items[i].className = 'item';
+            }
+            for (j = 0; j < points.length; j++) {
+                points[j].className = 'point';
+            }
+        }
+ 
+        var goIndex = function () {
+            clearActive();
+            items[index].className = 'item active';
+            points[index].className = 'point active'
+        }
+
+        var goLeft = function () {
+            if (index == 0) {
+                index = 3;
+            } else {
+                index--;
+            }
+            goIndex();
+        }
+ 
+        var goRight = function () {
+            if (index < 3) {
+                index++;
+            } else {
+                index = 0;
+            }
+            goIndex();
+        }
+        
+        left.addEventListener('click', function () {
+            goLeft();
+            time = 0;
+        })
+ 
+        right.addEventListener('click', function () {
+            goRight();
+            time = 0;
+        })
+ 
+        for(i = 0;i < points.length;i++){
+            points[i].addEventListener('click',function(){
+                var pointIndex = this.getAttribute('data-index')
+                index = pointIndex;
+                goIndex();
+                time = 0;
+            })
+        }
+
+        var timer;
+        function play(){
+         timer = setInterval(() => {
+            time ++;
+            if(time == 20 ){
+                goRight();
+                time = 0;
+            }    
+        },100)
+    }
+        play();
+
+        all.onmousemove = function(){
+            clearInterval(timer)
+        }
+
+        all.onmouseleave = function(){
+            play();
+        }
+</script>
+</html>

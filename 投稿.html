@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投稿</title>
+    <link rel="stylesheet" href="final.css">
+</head>
+<body>
+    <div id="shadow"></div>
+    <div id="Father">
+      <div class="topnav">
+        <img id="logo" src="image/方寸logo.png" alt="方寸">
+        <a class="top-nev-a" href="首页.html">首页</a>
+        <a class="top-nev-a" href="榜单.html">榜单</a>
+        <a class="top-nev-a" href="标签.html">标签</a>
+        <div class="search-box">
+          <input type="search" class="search" placeholder="搜索">
+          <button class="se-logo" type="button" onclick="window.location='书籍页.html'"><img id="search-img" src="image/3.1-搜索.png" alt="search"></button>
+          <ul class="result-list">
+            <li><a id="res1" href="书籍页.html">AISHA</a></li>
+            <li><a id="res2" href="书籍页.html">蓝色时期</a></li>
+            <li><a id="res3" href="书籍页.html">再见绘梨</a></li>
+          </ul>
+          <a href="投稿.html"><button id="submit-button" type="button">投稿</button></a>
+          <a id="Sign-in" href="注册登录.html">注册&nbsp;|&nbsp登录</a>
+       </div>
+      </div>
+    </div>
+    <div id="tg-bg">
+      <div id="tg-main">
+        <form action="demo_form.php" method="post" onsubmit="return fun()">
+          <p class="title1">作品投稿</p>
+        <div class="zp">
+          <span class="tgT">作品标题</span>
+          <input type="text" id="tg-tit" required="required">
+        </div>
+        <div class="zp">
+          <span class="tgT">作品介绍</span>
+          <input type="text" id="tg-js" required="required">
+        </div>
+        <div class="zp">
+          <span class="tgT">点击上传</span>
+          <input id="file" type="file">
+        </div>
+        <img id="upload" src="" />
+        <div class="zp">
+          <span class="tgT">投稿分区</span>
+          <select id="tg-partition">
+            <option >请选择</option>
+            <option value="0">热血</option>
+            <option value="1">科幻</option>
+            <option value="2">都市</option>
+            <option value="3">悬疑</option>
+            <option value="4">历史</option>
+          </select>
+        </div>
+        <div class="zp">
+          <span class="tgT">作品标签</span>
+          <input type="text" id="tg-tit">
+        </div>
+        <p id="notice">发布须知：<br>
+          1、请上传个人原创作品。<br>
+          2、请勿上传包含反动、涉恐、涉政、涉黄作品。</p>
+        <input id="tg-bt" type="submit" value="立刻投稿" >
+        </form>
+      </div>
+    </div>
+    <div id="bottom">版权所有&nbsp©&nbsp方寸&nbsp&nbspwww.fangcun.com&nbsp&nbspJICP备11111111号J公网安备 11111111111111号</div>  
+    
+</body>
+<script>
+  var file = document.getElementById("file");
+  var image = document.getElementById("upload");
+  file.onchange = function() {
+  var fileData = this.files[0];  
+  var reader = new FileReader();
+  reader.readAsDataURL(fileData);
+
+  
+  reader.onload = function(e) {
+  console.log(e); 
+  console.log(this.result);
+  image.setAttribute("src", this.result)
+  document.getElementById("upload").style.display="block";
+  } 
+}
+
+function fun(){
+				alert("已提交");
+        window.location.href='首页.html';
+				return false;
+			}
+</script>
+</html>
